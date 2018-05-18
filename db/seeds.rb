@@ -15,9 +15,10 @@ Ingredient.create(name: "mint leaves")
 Cocktail.create(name:"Spritz Aperol")
 Cocktail.create(name: "Saint Germain")
 
-# url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-# response =  open(url)
-# ingredients =  JSON.parse(response.read)
-# ingredients.each do |ingredient|
-#   puts Ingredient.create(name: ingredient["strIngredient1"])
-# end
+url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+response =  open(url)
+ingredients =  JSON.parse(response.read)
+ingredients["drinks"].each do |drink|
+  Ingredient.create(name: drink["strIngredient1"])
+end
+
