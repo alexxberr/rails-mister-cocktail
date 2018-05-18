@@ -44,6 +44,8 @@ gem 'simple_form'
 
 #figaro
 gem 'figaro'
+#cloudinary
+gem 'cloudinary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
