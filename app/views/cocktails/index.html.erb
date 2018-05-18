@@ -1,1 +1,20 @@
-<h1> </h1>
+<div class="page-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center">my cocktails</h1>
+      </div>
+      <div class="row">
+        <%@cocktails.each do |cocktail| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card text-center" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)),
+                   url('https://lacuochinasopraffina.com/wp-content/uploads/2016/10/apertol-spritz.jpg')">
+              <h3><%= cocktail.name %></h3>
+              <h3><%= link_to "See this cocktail", cocktail_path(cocktail), class: "card-link" %></h3>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

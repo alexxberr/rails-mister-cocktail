@@ -1,1 +1,12 @@
-new.html.erb
+<h1><%= @cocktail.name %></h1>
+<h2>Add a dose</h2>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient %>
+  <%= f.submit "Add a dose"%>
+<% end %>
+
+<p><%= link_to "Back to all cocktails", cocktails_path %></p>
+
+

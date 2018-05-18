@@ -1,1 +1,31 @@
-show.html.erb
+<div class="page-content">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('https://lacuochinasopraffina.com/wp-content/uploads/2016/10/apertol-spritz.jpg')">
+    <h1 class ="text-center"><%= @cocktail.name %></h1>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1 class="text-center"><%= @cocktail.name %></h1>
+      </div>
+      <div class="col-xs-12">
+        <ul>
+          <% @cocktail.doses.each do |dose| %>
+            <li><%= dose.ingredient.name %>: <%= dose.description %> <%= link_to "Delete", dose_path(dose), method: "delete" %></li>
+          <% end %>
+        </ul>
+      </div>
+
+
+      <div class="col-xs-12">
+        <p><%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %></p>
+        <p class= "text-center" > <i class="fas fa-undo"> </i><%= link_to "Go back", cocktails_path%></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
